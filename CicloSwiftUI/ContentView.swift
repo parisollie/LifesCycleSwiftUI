@@ -7,9 +7,25 @@
 
 import SwiftUI
 
-//V-86,paso 3.0 Ciclo de Vida de View
+/**
+ V-86,paso 3.0 Ciclo de Vida de View
+ 
+ El ciclo de vida de una vista en SwiftUI se refiere a los momentos en que una
+ vista:
+ 
+ -Aparece por primera vez en pantalla (onAppear)
+ -Desaparece de la pantalla (onDisappear)
+ -Se actualiza o cambia porque alguna variable de estado cambió
+  (@State, @Binding, etc.)
+ -En SwiftUI todo es declarativo, así que en vez de imperativamente decir “muéstrame esto”, tú describes el estado y el framework decide qué mostrar y cuándo.
+ */
 struct ContentView: View {
-    
+    /**
+     Estas propiedades son estados locales de la vista. Cuando cambian, la vista se vuelve a renderizar automáticamente.
+
+     -contenido se vincula al TextField (binding bidireccional)
+     -show decide si el texto "Hello World" se muestra o no
+     */
     @State private var contenido = ""
     @State private var show = true
     
